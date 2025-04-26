@@ -1,0 +1,521 @@
+/* Font imports for more arcade-style appearance */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap');
+
+body {
+  background-color: #120638;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(179, 0, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(0, 255, 242, 0.1) 0%, transparent 40%),
+    url('./1.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Main container with neon glow */
+.slot-machine-container {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0;
+  position: relative;
+}
+
+/* Marquee header with flashing lights animation */
+.casino-marquee {
+  background-color: #000;
+  border: 4px solid #ff00e6;
+  border-radius: 12px 12px 0 0;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 230, 0.6);
+}
+
+.casino-title {
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #ff00e6,
+    0 0 10px #ff00e6,
+    0 0 20px #ff00e6;
+  margin: 0;
+  letter-spacing: 2px;
+  animation: textGlow 2s infinite alternate;
+  font-size: 1.8rem;
+}
+
+.marquee-lights {
+  height: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background: repeating-linear-gradient(
+    to right,
+    #ff00e6,
+    #ff00e6 10px,
+    #00f2ff 10px,
+    #00f2ff 20px
+  );
+}
+
+.marquee-lights:first-child {
+  top: 0;
+  animation: marqueeLight 1s infinite linear;
+}
+
+.marquee-lights:last-child {
+  bottom: 0;
+  animation: marqueeLight 1s infinite linear reverse;
+}
+
+/* Player info card */
+.player-info {
+  background-color: #220a5e;
+  padding: 1rem;
+  border-left: 4px solid #ff00e6;
+  border-right: 4px solid #ff00e6;
+}
+
+.player-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.player-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff00e6, #00f2ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  box-shadow: 0 0 10px rgba(255, 0, 230, 0.8);
+}
+
+.player-details {
+  flex: 1;
+}
+
+.player-details h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.1rem;
+  color: #00f2ff;
+}
+
+.player-details p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Game cabinet with arcade machine styling */
+.game-cabinet {
+  background-color: #340d7a;
+  border: 4px solid #ff00e6;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cabinet-screen {
+  background-color: #000;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.screen-bezel {
+  background-color: #000;
+  border: 8px solid #444;
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* Reels container */
+.reels-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #000a2c, #001a57);
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.reel {
+  flex: 1;
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #000a2c, #000716);
+  border-radius: 12px;
+  border: 3px solid #00f2ff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 12px rgba(0, 242, 255, 0.4);
+}
+
+.reel.spinning {
+  animation: spinReel 0.3s infinite linear;
+}
+
+.symbol-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
+}
+
+.symbol {
+  font-size: 2.5rem;
+  animation: pulseSymbol 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* Controls area */
+.cabinet-controls {
+  background: linear-gradient(to bottom, #220a5e, #190645);
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spin-lever-container {
+  flex: 1;
+}
+
+.spin-lever {
+  background: linear-gradient(to bottom, #ff003c, #a60028);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-family: 'Bungee', cursive;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 5px 0 #6e001b,
+    0 6px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.spin-lever:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.spin-lever:hover:not(:disabled):before {
+  left: 100%;
+}
+
+.spin-lever:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 0 #6e001b,
+    0 12px 15px rgba(0, 0, 0, 0.3);
+}
+
+.spin-lever:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 
+    0 2px 0 #6e001b,
+    0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.spin-lever:disabled {
+  background: linear-gradient(to bottom, #888, #666);
+  box-shadow: 
+    0 5px 0 #444,
+    0 6px 10px rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.spin-lever.pulled {
+  animation: buttonPulse 0.5s infinite alternate;
+}
+
+.cabinet-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.quit-button {
+  background: linear-gradient(to bottom, #570077, #39004f);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quit-button:hover {
+  background: linear-gradient(to bottom, #7b00a8, #570077);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.retry-counter {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #00f2ff;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.counter-value {
+  color: #ff00e6;
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
+
+/* Message styling */
+.message-banner {
+  text-align: center;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-family: 'Bungee', cursive;
+  font-size: 1.2rem;
+  animation: messagePulse 0.8s infinite alternate;
+}
+
+.message-banner.win {
+  background-color: rgba(0, 255, 106, 0.2);
+  color: #00ff6a;
+  border: 2px solid #00ff6a;
+  box-shadow: 0 0 12px rgba(0, 255, 106, 0.6);
+}
+
+.message-banner.lose {
+  background-color: rgba(255, 76, 0, 0.2);
+  color: #ff4c00;
+  border: 2px solid #ff4c00;
+  box-shadow: 0 0 12px rgba(255, 76, 0, 0.4);
+}
+
+/* Win celebration screen */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.win-celebration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #00ff6a;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 106, 0.8);
+  animation: celebrationPulse 2s infinite alternate;
+  pointer-events: auto;
+  min-width: 280px;
+}
+
+.win-headline {
+  color: #fff;
+  text-shadow: 
+    0 0 5px #00ff6a,
+    0 0 10px #00ff6a;
+  margin-top: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+}
+
+.win-text {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Bungee', cursive;
+}
+
+.cooldown-text {
+  color: #00f2ff;
+  font-size: 0.9rem;
+}
+
+/* Sound warning */
+.sound-warning {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-left: 4px solid #ffcc00;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #ffcc00;
+}
+
+/* Animations */
+@keyframes textGlow {
+  0% {
+    text-shadow: 
+      0 0 5px #ff00e6,
+      0 0 10px #ff00e6;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #ff00e6,
+      0 0 10px #ff00e6,
+      0 0 20px #ff00e6,
+      0 0 30px #ff00e6;
+  }
+}
+
+@keyframes marqueeLight {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 0;
+  }
+}
+
+@keyframes spinReel {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulseSymbol {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    background: linear-gradient(to bottom, #ff003c, #a60028);
+  }
+  100% {
+    background: linear-gradient(to bottom, #ff2c5a, #c4002f);
+  }
+}
+
+@keyframes messagePulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes celebrationPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 106, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(0, 255, 106, 0.9);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 700px) {
+  .slot-machine-container {
+    margin: 1rem;
+  }
+  
+  .casino-title {
+    font-size: 1.4rem;
+  }
+  
+  .symbol {
+    font-size: 2rem;
+  }
+  
+  .cabinet-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cabinet-buttons {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .spin-lever {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .casino-title {
+    font-size: 1rem;
+  }
+  
+  .symbol {
+    font-size: 1.5rem;
+  }
+  
+  .reels-container {
+    padding: 0.5rem;
+  }
+  
+  .win-headline {
+    font-size: 1.2rem;
+  }
+}
